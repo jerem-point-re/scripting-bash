@@ -1,16 +1,18 @@
-<center>
+<div align="center">
 
 ![bashLogo](bash_dark.svg)
 
 # Introduction au scripting Bash
 [it-connect.fr](https://www.it-connect.fr/cours-tutoriels/administration-systemes/scripting/bash/)
 
-</center>
+</div>
 
-> [!TIP] Le Bash (Bourne Again SHell) est un interpréteur de commandes largement utilisé dans les systèmes Unix et Linux. Il permet d'exécuter des commandes, d'automatiser des tâches et de gérer des scripts.
+> [!TIP]
+> Le Bash (Bourne Again SHell) est un interpréteur de commandes largement utilisé dans les systèmes Unix et Linux. Il permet d'exécuter des commandes, d'automatiser des tâches et de gérer des scripts.
 
 ## J. Premiers pas avec les commandes Bash
-<center>
+
+<div align="center">
 
 | Commande | Option.s | Argument.s |
 |:---|:---:|---:|
@@ -22,12 +24,12 @@
 | touch |  | fichier.txt |
 | man |  | ls |
 
-</center>
+</div>
 
 > [!NOTE] Pour les options, il y a souvent une version courte (ex: -R) et une version longue (ex: --recurse)
 
-> [!WARNING] Les commandes Bash sont sensibles à la casse. Par exemple, -r et -R sont deux options différentes
-
+> [!WARNING]
+> Les commandes Bash sont sensibles à la casse. Par exemple, -r et -R sont deux options différentes
 
 <div align="right">
 
@@ -40,21 +42,24 @@ pwd
 ```
 > Affiche le répertoire de travail actuel.
 
-> [!TIP] ~ représente le répertoire personnel de l'utilisateur actuel.
+> [!TIP]
+> `~` représente le répertoire personnel de l'utilisateur actuel.
 
 ```bash
 cd /chemin/vers/repertoire
 ```
 > Change le répertoire de travail actuel vers celui spécifié.
 
-> [!TIP] Utilisez `cd ..` pour revenir au répertoire parent. Puis `cd ~` pour revenir au répertoire personnel de l'utilisateur actuel.
+> [!TIP]
+> Utilisez `cd ..` pour revenir au répertoire parent. Puis `cd ~` pour revenir au répertoire personnel de l'utilisateur actuel.
 
 ```bash
 ls
 ```
 > Liste les fichiers et répertoires dans le répertoire actuel.
 
-> [!TIP] Utilisez `ls -l` pour une liste détaillée avec des informations supplémentaires.
+> [!TIP]
+> Utilisez `ls -l` pour une liste détaillée avec des informations supplémentaires.
 
 ```bash
 ls -l /chemin/vers/repertoire
@@ -76,29 +81,36 @@ touch fichier.txt
 ```
 > Crée un nouveau fichier vide nommé "fichier.txt".
 
-> [!TIP] Vous pouvez créer plusieurs fichiers en une seule commande, par exemple : `touch fichier1.txt fichier2.txt fichier3.txt` et aussi `touch fichier{1..5}.txt` pour créer fichier1.txt à fichier5.txt.
+> [!TIP]
+> Vous pouvez créer plusieurs fichiers en une seule commande, par exemple : `touch fichier1.txt fichier2.txt fichier3.txt` et aussi `touch fichier{1..5}.txt` pour créer fichier1.txt à fichier5.txt.
 
-> [!WARNING] Si le fichier existe déjà, la commande `touch` met simplement à jour son horodate de dernière modification.
+> [!WARNING]
+> Si le fichier existe déjà, la commande `touch` met simplement à jour son horodate de dernière modification.
 
-> [!TIP] Pour créer un fichier avec du contenu, vous pouvez utiliser la redirection, par exemple : `echo "Bonjour le monde" > fichier.txt`.
+> [!TIP]
+> Pour créer un fichier avec du contenu, vous pouvez utiliser la redirection, par exemple : `echo "Bonjour le monde" > fichier.txt`.
 
-> [!CAUTION] Utilisez >> au lieu de > pour ajouter du contenu à un fichier existant sans l'écraser.
+> [!CAUTION]
+> Utilisez `>>` au lieu de `>` pour ajouter du contenu à un fichier existant sans l'écraser.
 
-> [!NOTE] `touch` peut également être utilisé pour créer des fichiers spéciaux comme des fichiers de périphériques ou des tubes nommés avec des options supplémentaires ou simplement des fichiers `.mp4`, `.md`, ...
+> [!NOTE]
+> `touch` peut également être utilisé pour créer des fichiers spéciaux comme des fichiers de périphériques ou des tubes nommés avec des options supplémentaires ou simplement des fichiers `.mp4`, `.md`, ...
 
 ```bash
 rm fichier.txt
 ```
 > Supprime le fichier nommé "fichier.txt".
 
-> [!CAUTION] Soyez très prudent.e.s avec la commande `rm`, car elle supprime les fichiers de manière permanente et aussi si le chemin est incorrect, vous pourriez supprimer des fichiers importants et amener à des pertes de données voire le crash du système.
+> [!CAUTION]
+> Soyez très prudent.e.s avec la commande `rm`, car elle supprime les fichiers de manière permanente et aussi si le chemin est incorrect, vous pourriez supprimer des fichiers importants et amener à des pertes de données voire le crash du système.
 
 ```bash
 rm -r repertoire_a_supprimer
 ```
 > Supprime le répertoire nommé "repertoire_a_supprimer" et tout son contenu de manière récursive.
 
-> [!TIP] Pour supprimer le contenu d'un répertoire sans supprimer le répertoire lui-même, vous pouvez utiliser `rm -r repertoire_a_supprimer/*`.
+> [!TIP]
+> Pour supprimer le contenu d'un répertoire sans supprimer le répertoire lui-même, vous pouvez utiliser `rm -r repertoire_a_supprimer/*`.
 
 <div align="right">
 
@@ -116,9 +128,11 @@ man commande
 ```
 > Affiche le manuel d'une commande spécifique (ex. `man ls`).
 
-> [!NOTE] Les pages de manuel peuvent être parcourues avec les touches fléchées, et vous pouvez quitter en appuyant sur q.
+> [!NOTE]
+> Les pages de manuel peuvent être parcourues avec les touches fléchées, et vous pouvez quitter en appuyant sur q.
 
-> [!TIP] Les 'man pages' sont disponibles sur Internet pour de nombreuses commandes, par exemple : https://man7.org/linux/man-pages/man1/ls.1.html
+> [!TIP]
+> Les 'man pages' sont disponibles sur Internet pour de nombreuses commandes, par exemple : https://man7.org/linux/man-pages/man1/ls.1.html
 
 ## IJ. Premier script Bash
 
@@ -128,6 +142,7 @@ touch mon_script.sh
 > Crée un nouveau fichier de script nommé "mon_script.sh".
 
 On peut éditer ce fichier avec un éditeur de texte comme `nano`, `vim`, ou `Visual Studio Code`.
+Ici, on va utiliser l'éditeur de texte de la ligne de commande
 
 ```bash
 nano mon_script.sh
@@ -143,7 +158,8 @@ Ensuite, on ajoute le contenu suivant au fichier :
 echo "Hello, World!"
 ```
 
-> [!NOTE] La première ligne `#!/bin/bash` est appelée "shebang" et indique que le script doit être exécuté avec l'interpréteur Bash.
+> [!NOTE]
+> La première ligne `#!/bin/bash` est appelée "shebang" et indique que le script doit être exécuté avec l'interpréteur Bash.
 
 Après avoir enregistré et fermé le fichier (dans `nano`, on fait `CTRL + O` pour enregistrer -- puis Entrée, puis `CTRL + X` pour quitter), on doit rendre le script exécutable avec la commande suivante :
 
@@ -206,7 +222,8 @@ ls -l /var/log | grep "error" | sort
 - `grep "error"` : Filtre les lignes contenant le mot "error".
 - `sort` : Trie les lignes en ordre alphabétique.
 
-> [!NOTE] Vous pouvez ajouter autant de commandes que vous le souhaitez dans une pipeline, en les séparant par des |. Chaque commande traite les données reçues de la commande précédente.
+> [!NOTE]
+> Vous pouvez ajouter autant de commandes que vous le souhaitez dans une pipeline, en les séparant par des |. Chaque commande traite les données reçues de la commande précédente.
 
 <div align="right">
 
@@ -221,7 +238,8 @@ cat ping_script.sh | grep "echo" | wc -l
 - `grep "echo"` : Filtre les lignes contenant le mot "echo".
 - `wc -l` : Compte le nombre de lignes (wc : word count, -l : que les lignes).
 
-> [!TIP] On peut écrire cette commande plus simplement :
+> [!TIP]
+> On peut écrire cette commande plus simplement :
 
 ```bash
 grep "echo" ping_script.sh | wc -l
@@ -236,9 +254,11 @@ then
 fi
 ```
 
-> [!NOTE] La condition à évaluer est spécifiée entre [ ], avec des espaces autour des crochets.
+> [!NOTE]
+> La condition à évaluer est spécifiée entre [ ], avec des espaces autour des crochets.
 
-> [!WARNING] L'instruction if est toujours suivie par l'instruction then et celle-ci doit être placée sur une nouvelle ligne ou après un point-virgule (;).
+> [!WARNING]
+> L'instruction if est toujours suivie par l'instruction then et celle-ci doit être placée sur une nouvelle ligne ou après un point-virgule (;).
 
 > L'instruction `fi` détermine la fin de la structure conditionnelle.
 
@@ -268,7 +288,8 @@ then
 fi
 ```
 
-> [!TIP] Les options courantes pour les conditions incluent :
+> [!TIP]
+> Les options courantes pour les conditions incluent :
 > - `-d` : vérifie si un répertoire existe.
 > - `-f` : vérifie si un fichier régulier existe.
 > - `-s` : vérifie si un fichier existe et n'est pas vide.
@@ -359,7 +380,8 @@ do
 done
 ```
 
-> [!NOTE] Les deux exemples ci-contre montrent deux façons différentes d'écrire une boucle for en Bash. La première utilise une séquence générée par {1..5}, tandis que la seconde utilise une syntaxe C-like avec for ((...)). Les deux boucles produisent le même résultat, c'est-à-dire afficher les numéros d'itération de 1 à 5.
+> [!NOTE]
+> Les deux exemples ci-contre montrent deux façons différentes d'écrire une boucle for en Bash. La première utilise une séquence générée par {1..5}, tandis que la seconde utilise une syntaxe C-like avec for ((...)). Les deux boucles produisent le même résultat, c'est-à-dire afficher les numéros d'itération de 1 à 5.
 
 ```bash
 for ((i=1; i<=5; i++))
@@ -413,9 +435,11 @@ done
 ```
 > Ce script redémarre les services "ssh" et "apache2" et affiche un message de confirmation pour chaque service redémarré.
 
-> [!WARNING] Assurez-vous d'avoir les permissions nécessaires pour redémarrer les services système.
+> [!WARNING]
+> Assurez-vous d'avoir les permissions nécessaires pour redémarrer les services système.
 
-> [!TIP] Exécutez le script avec sudo si nécessaire : `sudo ./votre_script.sh`
+> [!TIP]
+> Exécutez le script avec sudo si nécessaire : `sudo ./votre_script.sh`
 
 <div align="right">
 
@@ -498,7 +522,8 @@ echo "Identifiant renseigné : $username"
 ```
 > Ce script utilise une boucle `while` pour demander à l'utilisateur de saisir son identifiant tant que la variable `username` est vide. La commande `read` lit l'entrée de l'utilisateur et la stocke dans la variable `username`. Une fois que l'utilisateur a saisi un identifiant, le script affiche l'identifiant sélectionné.
 
-> [!NOTE] L'option `-z` dans la condition `[ -z $username ]` vérifie si la variable `username` est vide.
+> [!NOTE]
+> L'option `-z` dans la condition `[ -z $username ]` vérifie si la variable `username` est vide.
 
 <div align="right">
 
@@ -559,7 +584,8 @@ done < "/home/flo/ip.txt"
 ```
 > Ce script lit un fichier nommé "ip.txt" ligne par ligne, où chaque ligne contient une adresse IP. Pour chaque adresse IP lue, il exécute la commande `cscli decisions add --ip` pour bannir cette adresse IP dans CrowdSec.
 
-> [!TIP] CrowdSec est un système de sécurité collaboratif qui utilise des données de plusieurs sources pour détecter et bloquer les comportements malveillants sur les systèmes informatiques.
+> [!TIP]
+> CrowdSec est un système de sécurité collaboratif qui utilise des données de plusieurs sources pour détecter et bloquer les comportements malveillants sur les systèmes informatiques.
 
 ## VIIJ. La boucle `until`
 
@@ -574,7 +600,8 @@ echo "Boucle terminée."
 ```
 > Ce script utilise une boucle `until` pour afficher les numéros d'itération de 1 à 5. La variable `compteur` est initialisée à 1 et incrémentée à chaque itération jusqu'à ce qu'elle soit supérieure à 5.
 
-> [!WARNING] La boucle `until` continue tant que la condition est fausse, contrairement à la boucle `while` qui continue tant que la condition est vraie.
+> [!WARNING]
+> La boucle `until` continue tant que la condition est fausse, contrairement à la boucle `while` qui continue tant que la condition est vraie.
 
 <div align="right">
 
@@ -598,7 +625,8 @@ exec 3<&-
 ```
 > Ce script lit un fichier nommé "mon_fichier.txt" ligne par ligne en utilisant une boucle `until`. La boucle continue jusqu'à ce que la variable `ligne` soit vide, ce qui indique la fin du fichier. Chaque ligne lue est affichée à l'écran.
 
-> [!NOTE] L'utilisation de `exec 3< "$fichier"` ouvre le fichier pour la lecture sur le descripteur de fichier 3, et `exec 3<&-` ferme ce descripteur à la fin du script.
+> [!NOTE]
+> L'utilisation de `exec 3< "$fichier"` ouvre le fichier pour la lecture sur le descripteur de fichier 3, et `exec 3<&-` ferme ce descripteur à la fin du script.
 
 ## IX. La saisie utilisateur
 
@@ -610,7 +638,8 @@ echo "Bonjour, $prenom !"
 ```
 > Ce script demande à l'utilisateur de saisir son prénom, puis affiche un message de bienvenue avec le prénom saisi.
 
-> [!TIP] La commande s'écrit également `read -p "Veuillez entrer votre prénom : " prenom` pour afficher l'invite de saisie sur la même ligne.
+> [!TIP]
+> La commande s'écrit également `read -p "Veuillez entrer votre prénom : " prenom` pour afficher l'invite de saisie sur la même ligne.
 
 <div align="right">
 
@@ -716,7 +745,8 @@ echo "Mot de passe saisi."
 ```
 > Ce script demande à l'utilisateur de saisir son mot de passe de manière masquée (sans afficher les caractères saisis), puis affiche un message confirmant la saisie du mot de passe.
 
-> [!TIP] L'option `-s` dans la commande `read` permet de masquer l'entrée de l'utilisateur, ce qui est utile pour les mots de passe ou autres informations sensibles.
+> [!TIP]
+> L'option `-s` dans la commande `read` permet de masquer l'entrée de l'utilisateur, ce qui est utile pour les mots de passe ou autres informations sensibles.
 
 ## X. Création d'un menu interactif
 
@@ -978,7 +1008,8 @@ afficher_message() {
 afficher_message "Ceci est un message local."
 ```
 > Ce script définit une fonction nommée `afficher_message` qui utilise une variable locale `message` pour stocker l'argument passé à la fonction. La fonction affiche ensuite le message. L'utilisation de `local` garantit que la variable `message` n'est accessible qu'à l'intérieur de la fonction.
-> [!TIP] L'utilisation de variables locales dans les fonctions aide à éviter les conflits de noms avec d'autres variables dans le script principal.
+> [!TIP]
+> L'utilisation de variables locales dans les fonctions aide à éviter les conflits de noms avec d'autres variables dans le script principal.
 
 <div align="right">
 
@@ -1015,7 +1046,8 @@ echo "Cette ligne ne sera pas exécutée si la commande précédente échoue."
 ```
 > Ce script utilise `set -e` pour activer le mode "exit on error", ce qui signifie que le script s'arrêtera immédiatement si une commande échoue. Cela aide à prévenir les erreurs silencieuses et facilite le débogage.
 
-> [!TIP] Vous pouvez également utiliser `set -x` pour activer le mode de débogage, qui affiche chaque commande avant son exécution.
+> [!TIP]
+> Vous pouvez également utiliser `set -x` pour activer le mode de débogage, qui affiche chaque commande avant son exécution.
 
 ```bash
 #!/bin/bash
@@ -1028,4 +1060,5 @@ echo "Fin du script."
 ```
 > Ce script utilise la commande `trap` pour définir un gestionnaire d'erreurs qui affiche un message avec le numéro de ligne où l'erreur s'est produite. Cela permet de mieux comprendre où le script a échoué.
 
-> [!TIP] La variable spéciale `$LINENO` contient le numéro de la ligne actuelle dans le script, ce qui est utile pour le débogage.
+> [!TIP]
+> La variable spéciale `$LINENO` contient le numéro de la ligne actuelle dans le script, ce qui est utile pour le débogage.
