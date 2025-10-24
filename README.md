@@ -26,7 +26,8 @@
 
 </div>
 
-> [!NOTE] Pour les options, il y a souvent une version courte (ex: -R) et une version longue (ex: --recurse)
+> [!NOTE]
+> Pour les options, il y a souvent une version courte (ex: -R) et une version longue (ex: --recurse)
 
 > [!WARNING]
 > Les commandes Bash sont sensibles à la casse. Par exemple, -r et -R sont deux options différentes
